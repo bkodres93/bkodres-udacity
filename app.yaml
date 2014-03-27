@@ -2,42 +2,21 @@ application: bkodres-udacity
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: yes
+threadsafe: true
 
-# URLS and apps
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
-#Static files
-- url: /asciichan/stylesheets
-  static_dir: asciichan/stylesheets
+- url: /static
+  static_dir: static
 
-- url: /blog/stylesheets
-  static_dir: blog/stylesheets
+- url: /.*
+  script: blog.app
 
-- url: /stylesheets
-  static_dir: stylesheets
-
-#Main
-- url: /
-  script: main.app
-
-#Ascii work
-- url: /ascii.*
-  script: asciichan.asciichan.app
-
-#Blog work
-- url: /blog.*
-  script: blog.blog.app
-
-- url: /blog/(.*)
-  script: blog.blog.app
-
-
-# Libraries!
 libraries:
-- name: webapp2
-  version: "2.5.2"
 - name: jinja2
   version: latest
+
+- name: webapp2
+  version: "2.5.2"
+
+- name: PIL
+  version: "1.1.7"
