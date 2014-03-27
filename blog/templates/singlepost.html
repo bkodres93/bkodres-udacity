@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/blog/stylesheets/main.css" />
+
+    <title>Ben's Blog</title>
+  </head>
+
+  <body>
+    <a href="/blog" class="main-title">
+      Ben's Blog
+    </a>
+
+    <div id="content">
+      <div class="post">
+        <div class="post-heading">
+          <a href="/blog/{{postid}}" class="post-title">
+            {{blogpost.subject}}
+          </a>
+          <div class="post-date">
+            {{blogpost.created}}
+          </div>
+        </div>
+        <div class="post-content">
+          {{blogpost.content}}
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

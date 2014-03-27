@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="blog/stylesheets/main.css" />
+
+    <title>Ben's Blog</title>
+  </head>
+
+  <body>
+    <a href="/blog" class="main-title">
+      Ben's Blog
+    </a>
+
+    <div id="content">
+
+      {% for id, blogpost in blogposts.iteritems() %}
+        <div class="post">
+          <div class="post-heading">
+            <a href="/blog/{{id}}" class="post-title">
+              {{blogpost.subject}}
+            </a>
+            <div class="post-date">
+              {{blogpost.created}}
+            </div>
+          </div>
+          <div class="post-content">
+            {{blogpost.content}}
+          </div>
+        </div>
+        <br><br>
+      {% endfor %}
+
+
+      <div class="age">
+
+      </div>
+    </div>
+  </body>
+
+</html>
